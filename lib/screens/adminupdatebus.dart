@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:whroomadmin/services/addBus.dart';
 
-class UpdateBusScreen extends StatefulWidget {
-  const UpdateBusScreen({Key? key}) : super(key: key);
+class AdminUpdateBusScreen extends StatefulWidget {
+  const AdminUpdateBusScreen({Key? key}) : super(key: key);
 
   @override
-  _UpdateBusScreenState createState() => _UpdateBusScreenState();
+  _AdminUpdateBusScreenState createState() => _AdminUpdateBusScreenState();
 }
 
-class _UpdateBusScreenState extends State<UpdateBusScreen> {
+class _AdminUpdateBusScreenState extends State<AdminUpdateBusScreen> {
   late String bonnetid, from, to, stops;
-
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Update Bus Route'),
+        title: Text('Update Bus Route(Admin)'),
         backgroundColor: Colors.redAccent,
       ),
       body: Center(
@@ -30,21 +27,21 @@ class _UpdateBusScreenState extends State<UpdateBusScreen> {
                 Container(
                   padding:EdgeInsets.all(10),
                   child: TextField(
-                  onChanged: (value){
-                    setState(() {
-                      bonnetid = value.trim();
-                    });
-                  },
-                  decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                    labelText: 'Bonnet ID',
-                    focusedBorder:OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.black, width: 2.0),
-                      borderRadius: BorderRadius.circular(25.0),
+                    onChanged: (value){
+                      setState(() {
+                        bonnetid = value.trim();
+                      });
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Bonnet ID',
+                      focusedBorder:OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.black, width: 2.0),
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
                     ),
                   ),
                 ),
-               ),
                 SizedBox(height: 10,),
                 Container(
                   padding:EdgeInsets.all(10),
@@ -55,15 +52,15 @@ class _UpdateBusScreenState extends State<UpdateBusScreen> {
                       });
                     },
                     decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'From',
-                    focusedBorder:OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.black, width: 2.0),
-                      borderRadius: BorderRadius.circular(25.0),
+                      border: OutlineInputBorder(),
+                      labelText: 'From',
+                      focusedBorder:OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.black, width: 2.0),
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
                     ),
                   ),
                 ),
-               ),
                 SizedBox(height: 10,),
                 Container(
                   padding:EdgeInsets.all(10),
@@ -74,15 +71,15 @@ class _UpdateBusScreenState extends State<UpdateBusScreen> {
                       });
                     },
                     decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'To',
-                    focusedBorder:OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.black, width: 2.0),
-                      borderRadius: BorderRadius.circular(25.0),
+                      border: OutlineInputBorder(),
+                      labelText: 'To',
+                      focusedBorder:OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.black, width: 2.0),
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
                     ),
                   ),
                 ),
-               ),
                 SizedBox(height: 10,),
                 Container(
                   padding:EdgeInsets.all(10),
@@ -98,10 +95,10 @@ class _UpdateBusScreenState extends State<UpdateBusScreen> {
                       focusedBorder:OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.black, width: 2.0),
                         borderRadius: BorderRadius.circular(25.0),
+                      ),
                     ),
                   ),
                 ),
-               ),
               ],
             ),
             SizedBox(height:20),
@@ -111,10 +108,10 @@ class _UpdateBusScreenState extends State<UpdateBusScreen> {
                   Bus bus= Bus(bonnetid);
                   //print(bus);
                   bus.updateBus(bonnetid, from, to, stops);
-                  Navigator.of(context).popAndPushNamed('/homeconductor');
+                  Navigator.of(context).popAndPushNamed('/homeadmin');
                 },
                 style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.redAccent),),
+                  backgroundColor: MaterialStateProperty.all(Colors.redAccent),),
                 child: Text('Submit',style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),)),
 
           ],

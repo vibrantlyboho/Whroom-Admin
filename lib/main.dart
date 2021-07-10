@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:whroomadmin/screens/homeadmin.dart';
 import 'package:whroomadmin/screens/homeconductor.dart';
 import 'package:whroomadmin/screens/loginadmin.dart';
 import 'package:whroomadmin/screens/loginconductor.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/loginconductor': (context) => LoginConductorScreen(),
         '/third' : (context) => LoginAdminScreen(),
         '/homeconductor': (context) => HomeConductorScreen(),
-        'updatebusroute': (context) => UpdateBusScreen(),
+        '/homeadmin': (context) => HomeAdminScreen(),
+        //'updatebusroute': (context) => UpdateBusScreen(),
 
 
 
