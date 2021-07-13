@@ -22,7 +22,7 @@ class LocationClass{
         .add({
       'bonnetid': bonnetid,
       'uid': uid,
-      'geopoint': geopoint,
+      'geoPoint': geopoint,
 
     })
         .then((value) => print("Location Details Added"))
